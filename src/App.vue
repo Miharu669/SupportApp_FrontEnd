@@ -12,4 +12,11 @@ import Footer from "./components/Footer.vue";
 </template>
 
 <style scoped>
+
+main {
+  width: 100% ;
+  margin: 0 auto;
+  background-color: #888;
+  min-height: calc(100vh - 110px);
+}
 </style>

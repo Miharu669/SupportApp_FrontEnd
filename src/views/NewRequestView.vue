@@ -1,11 +1,11 @@
 <script setup>
-import Request from '../components/Request.vue';
+import RequestForm from '@/components/RequestForm.vue';
 </script>
 
 <template>
-  <h2>Request</h2>
+  
   <main>    
-    <Request/>
+    <RequestForm/>
   </main>
 </template>
 

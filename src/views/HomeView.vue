@@ -1,5 +1,5 @@
 <script setup>
-import Welcome from '../components/Welcome.vue';
+import Welcome from '@/components/Welcome.vue';
 </script>
 
 <template>
@@ -10,3 +10,6 @@ import Welcome from '../components/Welcome.vue';
   </main>
 </template>
 
+<style scoped>
+
+</style>

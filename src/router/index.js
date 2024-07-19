@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Request from "./../views/RequestView.vue";
 import HomeView from "../views/HomeView.vue";
+import NewRequest from "../views/NewRequestView.vue";
+import EditRequest from "../views/EditRequestView.vue"
+import RequestList from '../views/RequestListView.vue';
 
 
 const routes = []
@@ -13,9 +15,18 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    { path: '/request', 
+    { path: '/new-request', 
       name: 'Request', 
-      component: Request },
+      component: NewRequest },
+      { 
+        path: '/edit-request/:id', 
+        name: 'EditRequestView', 
+        component: EditRequest
+      },
+      { path: '/request-list', 
+        name: 'RequestList', 
+        component: RequestList 
+      },
   ]
 
 });

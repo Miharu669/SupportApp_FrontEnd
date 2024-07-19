@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-rose-700 p-4">
+    <nav class="bg-amber-600 p-3">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
             <div class="text-white text-2xl font-semibold">

@@ -1,17 +1,14 @@
 <template>
-    <footer class="bg-gray-800 text-white py-6 fixed bottom-0 left-0 w-full">
-      <div class="container mx-auto flex justify-between items-center">
-        <p class="text-start">&copy; 2024 SupportApp. All Rights Reserved.</p>
-        <p class="text-sm text-gray-400">Done with ❤️ by Vero</p>
-      </div>
-    </footer>
-  </template>
-  
-  <script setup>
+  <footer class="bg-amber-600 text-white py-4 fixed bottom-0 left-0 w-full">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+      <p class="text-center md:text-start mb-2 md:mb-0">&copy; 2024 SupportApp. All Rights Reserved.</p>
+      <p class="text-center md:text-sm text-gray-200">Done with ❤️ by Vero</p>
+    </div>
+  </footer>
+</template>
 
-  </script>
-  
-  <style scoped>
-  
-  </style>
-  
+<script setup>
+</script>
+
+<style scoped>
+</style>

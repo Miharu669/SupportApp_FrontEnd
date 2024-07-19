@@ -17,12 +17,12 @@ const comments = ref([
     <div class="flex flex-col lg:flex-row-reverse gap-6">
       <!-- Review card -->
       <div class="lg:w-1/3">
-        <div id="cardreview" class="bg-white shadow-md rounded-lg">
-          <div class="bg-blue-800 text-white p-4 rounded-t-lg">
+        <div id="cardreview" class="bg-zinc-600 shadow-md rounded-lg">
+          <div class="bg-sky-600 text-white p-4 rounded-t-lg">
             <h5 id="reviewtitle" class="text-lg font-semibold">Reviews</h5>
           </div>
           <div class="p-4 max-h-96 overflow-y-auto custom-scrollbar">
-            <div v-for="comment in comments" :key="comment.id" class="bg-gray-100 p-3 mb-3 rounded-lg">
+            <div v-for="comment in comments" :key="comment.id" class="bg-gray-200 p-3 mb-3 rounded-lg">
               <h6 class="text-gray-700 text-sm font-medium mb-1">{{ comment.author }}</h6>
               <p class="text-gray-600 text-sm">{{ comment.content }}</p>
             </div>
@@ -30,9 +30,8 @@ const comments = ref([
         </div>
       </div>
 
-      <!-- Help and About Us cards -->
       <div class="lg:w-2/3 flex flex-col gap-6">
-        <div id="card1" class="bg-white shadow-md rounded-lg">
+        <div id="card1" class="bg-zinc-200 shadow-md rounded-lg">
           <div class="flex">
             <div class="w-1/3">
               <img src="./../assets/images/doctor.png" class="w-full h-full object-cover rounded-l-lg" alt="help" />
@@ -46,10 +45,10 @@ const comments = ref([
           </div>
         </div>
 
-        <div id="card2" class="bg-white shadow-md rounded-lg">
+        <div id="card2" class="bg-zinc-200 shadow-md rounded-lg">
           <div class="flex">
             <div class="w-1/3">
-              <img src="./../assets/images/doctor2.png" class="w-full h-full object-cover rounded-l-lg" alt="about us" />
+              <img src="./../assets/images/doctor4.png" class="w-full h-full object-cover rounded-l-lg" alt="about us" />
             </div>
             <div class="w-2/3 p-4">
               <h3 class="text-xl font-semibold text-gray-800">About Us</h3>
@@ -69,6 +68,7 @@ const comments = ref([
 
 
 <style scoped>
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }

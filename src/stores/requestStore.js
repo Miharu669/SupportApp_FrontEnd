@@ -8,10 +8,9 @@ export const useRequestStore = defineStore({
   }),
   actions: {
     async fetchAllRequests() {
+      this.error = null;
       try {
-        const response = await fetch(
-          "http://localhost:8080/api/support-requests/all"
-        );
+        const response = await fetch("http://localhost:8080/api/support-requests/all");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -23,17 +22,15 @@ export const useRequestStore = defineStore({
     },
 
     async addRequest(newRequest) {
+      this.error = null;
       try {
-        const response = await fetch(
-          "http://localhost:8080/api/support-requests/add",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newRequest),
-          }
-        );
+        const response = await fetch("http://localhost:8080/api/support-requests/add", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newRequest),
+        });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -45,17 +42,15 @@ export const useRequestStore = defineStore({
     },
 
     async updateRequest(id, updatedRequest) {
+      this.error = null;
       try {
-        const response = await fetch(
-          `http://localhost:8080/api/support-requests/update/${id}`,
-          {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(updatedRequest),
-          }
-        );
+        const response = await fetch(`http://localhost:8080/api/support-requests/update/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedRequest),
+        });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -73,13 +68,11 @@ export const useRequestStore = defineStore({
     },
 
     async deleteRequest(id) {
+      this.error = null;
       try {
-        const response = await fetch(
-          `http://localhost:8080/api/support-requests/delete/${id}`,
-          {
-            method: "DELETE",
-          }
-        );
+        const response = await fetch(`http://localhost:8080/api/support-requests/delete/${id}`, {
+          method: "DELETE",
+        });
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -88,6 +81,7 @@ export const useRequestStore = defineStore({
         this.error = error.message;
       }
     },
+
     getRequestById(id) {
       return this.requests.find((req) => req.id === id);
     },
