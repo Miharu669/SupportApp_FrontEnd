@@ -17,8 +17,8 @@ const clearSelection = () => {
 <template>
   <main>
     <div>
-    <EditRequestList v-if="!selectedRequestId" @edit="selectRequest" />
-    <EditRequestForm v-else :id="selectedRequestId" @cancel="clearSelection" />
-  </div>
+      <EditRequestList v-if="!selectedRequestId" @edit="selectRequest" />
+      <EditRequestForm v-else :id="selectedRequestId" @cancel="clearSelection" @saved="clearSelection" />
+    </div>
   </main>
 </template>
