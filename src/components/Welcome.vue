@@ -36,7 +36,7 @@
       <div id="card2" class="-backdrop-hue-rotate-60 hover:backdrop-hue-rotate-60 bg-white/30 shadow-2xl rounded-lg">
         <div class="flex">
           <div class="w-1/4">
-            <img src="./../assets/images/doctor4.png" class="w-auto h-auto object-fit md:object-scale-down" alt="about us" />
+            <img src="./../assets/images/doctor4.png" class="w-auto h-auto object-contain md:object-scale-down" alt="about us" />
           </div>
           <div class="w-2/3 p-4">
             <h3 class="text-xl font-semibold text-gray-800">About Us</h3>
