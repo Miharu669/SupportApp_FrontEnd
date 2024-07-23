@@ -42,8 +42,8 @@ const handleDelete = async (id) => {
           <p class="text-sm text-zinc-500 mb-2"><strong>Subject:</strong> {{ request.subject }}</p>
           <p class="text-sm text-zinc-500 mb-2"><strong>Description:</strong> {{ request.description }}</p>
           <p class="text-sm text-zinc-500 mt-auto mb-2"><strong>Date:</strong> {{ formatDate(request.requestDate) }}</p>
-          <button @click="handleEdit(request.id)" class="bg-cyan-400 text-white py-2 px-6 rounded-md shadow-sm hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 mt-3">Edit</button>
-          <button @click="handleDelete(request.id)" class="bg-amber-600 text-white py-2 px-6 rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 mt-3">Delete</button>
+          <button @click="handleEdit(request.id)" class="bg-cyan-400 text-white py-2 px-6 rounded-md shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-amber-500 mt-3">Edit</button>
+          <button @click="handleDelete(request.id)" class="bg-amber-600 text-white py-2 px-6 rounded-md shadow-sm hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-red-500 mt-3">Delete</button>
         </div>
       </div>
     </div>

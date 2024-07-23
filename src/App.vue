@@ -21,6 +21,6 @@ main {
   width: 100% ;
   margin: 0 auto;
   background-color: white;
-  min-height: calc(100vh - 110px);
+  min-height: calc(100vh - 112px);
 }
 </style>

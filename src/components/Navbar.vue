@@ -8,9 +8,9 @@
                 </router-link>
             </div>
             <div class="hidden md:flex space-x-4">
-                <router-link to="/new-request" class="text-gray-600 hover:text-white">Request</router-link>
-                <router-link to="/edit-request/:id" class="text-gray-600 hover:text-white">Edit Request</router-link>
-                <router-link to="/request-list" class="text-gray-600 hover:text-white">All Request</router-link>
+                <router-link to="/new-request" class="text-gray-600 hover:text-white font-semibold">Request</router-link>
+                <router-link to="/edit-request/:id" class="text-gray-600 hover:text-white font-semibold">Edit Request</router-link>
+                <router-link to="/request-list" class="text-gray-600 hover:text-white font-semibold">All Request</router-link>
             </div>
             <button @click="toggleMenu" class="md:hidden text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
