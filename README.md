@@ -32,6 +32,9 @@ npm run test:unit
 
 
 ## Screenshots:
+### Login: 
+#### admin
+#### password
 ![6c1cef52ef2cdb3f02be98cd2232d1e1](https://github.com/user-attachments/assets/452c7c04-4f0a-4903-8c88-249097fba709)
 ![image](https://github.com/user-attachments/assets/cde3d4b3-85d9-49d5-9e40-bd63a8ef9d1e)
 ![005011c3d5ac4d6cec9815bf1c5d6d5b](https://github.com/user-attachments/assets/f475d077-4dea-4033-8b68-8fa70bd9b9ca)
