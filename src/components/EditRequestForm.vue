@@ -68,13 +68,13 @@ const resetForm = () => {
       <div class="p-4">
         <form @submit.prevent="handleSubmit">
           <div class="mb-4">
-            <label for="requesterName" class="block text-zinc-500 text-sm font-semibold mb-1">Name</label>
+            <label for="requestName" class="block text-zinc-500 text-sm font-semibold mb-1">Name</label>
             <input v-model="newRequest.requestName" type="text" id="name" placeholder="Name"
               class="form-input mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required />
           </div>
           <div class="mb-4">
-            <label for="topic" class="block text-zinc-500 text-sm font-semibold mb-1">Subject</label>
+            <label for="subject" class="block text-zinc-500 text-sm font-semibold mb-1">Subject</label>
             <input v-model="newRequest.subject" type="text" id="subject" placeholder="Subject"
               class="form-input mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required />
@@ -87,13 +87,14 @@ const resetForm = () => {
           </div>
           <div class="mb-4">
             <label for="date" class="block text-zinc-500 text-sm font-semibold mb-1">Date</label>
-            <input v-model="newRequest.date" type="date" id="date"
+            <input v-model="newRequest.date" id="date" type="date"
               class="form-input mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required />
           </div>
           <div class="flex justify-center gap-4">
             <button type="submit"
-              class="bg-amber-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500">{{ props.id ? 'Update' : 'Submit' }}</button>
+              class="bg-amber-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500">{{
+                props.id ? 'Update' : 'Submit' }}</button>
             <button type="button" @click="$emit('cancel')"
               class="bg-zinc-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-500">Cancel</button>
           </div>
@@ -102,4 +103,3 @@ const resetForm = () => {
     </div>
   </div>
 </template>
-

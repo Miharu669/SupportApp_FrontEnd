@@ -1,12 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { mount } from "@vue/test-utils";
-import { createPinia, setActivePinia } from "pinia";
-import EditRequestList from "@/components/EditRequestList.vue"; // Adjust the import path as needed
-import { useRequestStore } from "../stores/requestStore"; // Adjust the import path as needed
+import EditRequestList from "@/components/EditRequestList.vue";
+import { useRequestStore } from "../stores/requestStore";
+import { nextTick } from "vue";
 
-// Mock the requestStore
 vi.mock("../stores/requestStore", () => ({
-  useRequestStore: vi.fn() 
+  useRequestStore: vi.fn(),
 }));
 
 describe("EditRequestList", () => {
@@ -32,6 +31,7 @@ describe("EditRequestList", () => {
     useRequestStore.mockReturnValue(mockStore);
 
     wrapper = mount(EditRequestList);
+    console.log(wrapper.html());
   });
 
   it("renders the component", () => {
@@ -57,20 +57,26 @@ describe("EditRequestList", () => {
     expect(date.text()).toContain("25/7/2023");
   });
 
+  it("renders the requests", async () => {
+    await nextTick();
+    expect(wrapper.find("h4").text()).toBe("Test Request");
+    expect(wrapper.find("p:nth-child(1)").text()).toContain("Test Subject");
+    expect(wrapper.find("p:nth-child(2)").text()).toContain("Test Description");
+  });
+
   it("calls handleEdit when edit button is clicked", async () => {
-    const editButton = wrapper.find("button:nth-child(1)");
+    await nextTick();
+    const editButton = wrapper.find('[data-test="edit-button"]');
     await editButton.trigger("click");
 
-    // Check if the 'edit' event was emitted with the correct ID
     expect(wrapper.emitted("edit")).toBeTruthy();
     expect(wrapper.emitted("edit")[0]).toEqual([1]);
   });
 
   it("calls handleDelete when delete button is clicked", async () => {
-    const deleteButton = wrapper.find("button:nth-child(2)");
+    const deleteButton = wrapper.find('[data-test="delete-button"]');
     await deleteButton.trigger("click");
 
-    // Check if deleteRequest was called with the correct ID
     expect(useRequestStore().deleteRequest).toHaveBeenCalledWith(1);
   });
 

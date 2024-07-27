@@ -1,10 +1,10 @@
 <script setup>
-import Welcome from '@/components/Welcome.vue';
+import Login from "@/components/Login.vue";
 </script>
 
 <template>
-
   <main>
-    <Welcome />
+    <Login />
   </main>
 </template>
+

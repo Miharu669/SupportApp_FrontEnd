@@ -1,34 +1,33 @@
 <script setup>
-import { ref } from "vue";
-import { useRequestStore } from "../stores/requestStore";
-
+import { ref } from 'vue';
+import { useRequestStore } from '../stores/requestStore';
 
 const newRequest = ref({
-  requestName: "",
-  subject: "",
-  description: "",
-  date: "",
+  requestName: '',
+  subject: '',
+  description: '',
+  date: '',
 });
-
 
 const requestStore = useRequestStore();
 
-
 const handleSubmit = async () => {
   try {
-    await requestStore.addRequest(newRequest.value);
+    console.log("Submitting request:", newRequest.value);
+    let cleanRequest = { ...newRequest.value };
+    console.log(cleanRequest);
+    await requestStore.addRequest(cleanRequest);
     resetForm();
   } catch (error) {
-    console.error("Error submitting the request:", error);
+    console.error("Error al enviar la solicitud:", error);
   }
 };
 
-
 const resetForm = () => {
-  newRequest.value.requestName = "";
-  newRequest.value.subject = "";
-  newRequest.value.description = "";
-  newRequest.value.date = "";
+  newRequest.value.requestName = '';
+  newRequest.value.subject = '';
+  newRequest.value.description = '';
+  newRequest.value.date = '';
 };
 </script>
 
@@ -47,7 +46,7 @@ const resetForm = () => {
               required />
           </div>
           <div class="mb-4">
-            <label for="topic" class="block text-zinc-500 text-sm font-semibold mb-1">Subject</label>
+            <label for="subject" class="block text-zinc-500 text-sm font-semibold mb-1">Subject</label>
             <input v-model="newRequest.subject" type="text" id="subject" placeholder="Subject"
               class="form-input mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required />
@@ -60,22 +59,20 @@ const resetForm = () => {
           </div>
           <div class="mb-4">
             <label for="date" class="block text-zinc-500 text-sm font-semibold mb-1">Date</label>
-            <input v-model="newRequest.date" type="date" id="date"
+            <input v-model="newRequest.date" id="date" type="date"
               class="form-input mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               required />
           </div>
           <div class="flex justify-center gap-4">
-            <button type="submit"
-              class="bg-amber-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500">Submit</button>
-            <button type="reset"
-              class="bg-zinc-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-500">Reset</button>
+            <button type="submit" data-test="submit-button"
+              class="bg-amber-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-700">Submit</button>
+            <button @click="resetForm" data-test="reset-button" type="reset"
+              class="bg-zinc-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-700">Reset</button>
+            <router-link to="/request-list" id="cancel"
+              class="bg-cyan-500 text-white py-2 px-4 rounded-md shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-700">Cancel</router-link>
           </div>
         </form>
       </div>
     </div>
   </div>
 </template>
-
-
-
-<style scoped></style>
