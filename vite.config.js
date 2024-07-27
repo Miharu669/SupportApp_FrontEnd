@@ -2,8 +2,9 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
+  base: "/SupportApp_FrontEnd/",
   plugins: [
     vue(),
   ],
@@ -15,9 +16,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8080', // Backend server URL
+        target: 'http://localhost:8080', 
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''), // Rewrite /api to empty string
+        rewrite: (path) => path.replace(/^\/api/, ''), 
       },
     },
   },
